@@ -1,0 +1,123 @@
+{
+  "name": "dsh-sidebar",
+  "displayName": "DeepSeek Harness Sidebar",
+  "description": "Run the local DeepSeek Harness (dsh) web UI in a VS Code sidebar.",
+  "version": "0.1.1",
+  "publisher": "Osgood001",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onView:dsh.sidebar",
+    "onStartupFinished"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "dsh",
+          "title": "DeepSeek Harness",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "dsh": [
+        {
+          "type": "webview",
+          "id": "dsh.sidebar",
+          "name": "DeepSeek",
+          "visibility": "visible"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "dsh.restart",
+        "title": "DSH: Restart Server",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "dsh.openInBrowser",
+        "title": "DSH: Open in Browser",
+        "icon": "$(link-external)"
+      },
+      {
+        "command": "dsh.focus",
+        "title": "DSH: Focus Sidebar"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "dsh.restart",
+          "when": "view == dsh.sidebar",
+          "group": "navigation"
+        },
+        {
+          "command": "dsh.openInBrowser",
+          "when": "view == dsh.sidebar",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "dsh.focus",
+        "key": "ctrl+alt+d",
+        "mac": "cmd+alt+d"
+      }
+    ],
+    "configuration": {
+      "title": "DeepSeek Harness",
+      "properties": {
+        "dsh.path": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the dsh executable. Empty = auto-detect (PATH, ~/.local/bin)."
+        },
+        "dsh.profile": {
+          "type": "string",
+          "default": "web",
+          "description": "dsh profile to boot (must be a web-serving profile)."
+        },
+        "dsh.extraArgs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Extra args appended to the dsh web command."
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^4.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Osgood001/dsh-vscode.git"
+  },
+  "homepage": "https://github.com/Osgood001/dsh-vscode#readme",
+  "bugs": {
+    "url": "https://github.com/Osgood001/dsh-vscode/issues"
+  },
+  "scripts": {
+    "test": "node --test",
+    "package": "vsce package"
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": false,
+      "description": "Starts a local DeepSeek Harness process in the workspace."
+    },
+    "virtualWorkspaces": false
+  }
+}
