@@ -1,8 +1,8 @@
 {
   "name": "deepseek-harness-sidebar",
-  "displayName": "DeepSeek Harness Sidebar",
+  "displayName": "DeepSeek Harness Sidebar by Osgood",
   "description": "Run the local DeepSeek Harness (dsh) web UI in a VS Code sidebar.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publisher": "Osgood001",
   "license": "PolyForm-Noncommercial-1.0.0",
   "engines": {

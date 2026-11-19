@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- Distinguish the Marketplace display name with author attribution.
+
 ## 0.1.2
 
 - Use the Marketplace package ID `deepseek-harness-sidebar`.
