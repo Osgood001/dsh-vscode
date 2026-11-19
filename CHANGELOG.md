@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+- Use the Marketplace package ID `deepseek-harness-sidebar`.
+
 ## 0.1.1
 
 - Prepare the first public release.

@@ -48,4 +48,4 @@ Install the resulting `.vsix` with VS Code's **Extensions: Install from VSIX** c
 
 [PolyForm Noncommercial 1.0.0](LICENSE). Free noncommercial use, modification, and redistribution under its terms. Preserve the author and license attribution in [NOTICE](NOTICE). Commercial use outside its permitted purposes requires prior written permission from [Osgood001](https://github.com/Osgood001).
 
-The Marketplace publisher ID is provisional until registration completes.
+Marketplace publisher: [Osgood001](https://marketplace.visualstudio.com/publishers/Osgood001).
